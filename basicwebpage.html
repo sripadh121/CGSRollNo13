@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #topbar{
+            background-color: gray;
+            height: 100px;
+        }
+ 
+        #topsubbar{
+            display: flex;
+            justify-content: space-between;
+        }
+        #image{
+            height: 80px;
+            padding-top: 10px;
+            padding-right: 10px;
+       
+        }
+        #logo{
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+        #bottomleft{
+            width: 50%;
+            background-color: rgb(215, 215, 250);
+            justify-content: space-between;
+            
+            padding-left: 180px;
+            padding-top: 180px;
+            padding-bottom: 180px;
+            
+        }
+        #bottomright{
+            width: 50%;
+            background-color: rgb(94, 211, 240);
+        
+            padding-left: 180px;
+            padding-top: 180px;
+            padding-bottom: 180px;
+        }
+        #bottombar{
+            width:auto;
+            display: flex;
+        }
+        #image1{
+            height: 70px;
+            padding-top: 0px;
+            padding-right: 10px;
+       
+        }
+        #logo{
+            padding-bottom: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="topbar">
+       <div id="topsubbar">
+        <div id="logo">
+            <img id="image1" src="./codeeditor.jpg" alt="">
+        </div>
+        <div>
+            <h1> REGISTRATION PAGE</h1>
+        </div>
+        <div id="pic">
+            <img id="image" src="./default.jpg" alt="defaultimage">
+        </div>
+       </div>
+    </div>
+    <div id="bottombar">
+        <div id="bottomleft">
+            <h1>REGISTRATION</h1>
+            <form action="">
+                <div>
+                <label for="">Enter Username:</label>
+                <input type="text" id="username" name="username" required>
+                </div>
+                <br>
+                <div>
+                <label for="">Enter Email:</label>
+                <input type="email" name="" id="">
+                </div>
+                <br>
+                <div>
+                <label for=""> Create Password:</label>
+                <input type="password" id="" name="password" placeholder="createpassword" required>
+                </div>
+                <br>
+                <div>
+                <label for="">Confirm Password:</label>
+                <input type="password" id=" " name="confirm_password" placeholder="Enterpassword" required>
+                </div>
+                <br>
+                <div>
+                <button type="submit" >SAVE</button>
+                </div>
+            </form>     
+        </div>
+        <div id="bottomright">
+            <h1>LOGIN</h1>
+
+                <div >
+                    <form action="">
+                    <div>
+                    <label for="">EMAIL:</label>
+                    <input type="email" name="" id="">
+                    <div>
+                    <br>
+                    <label for="">PASSWORD:</label>
+                    <input type="password" name="" id="" placeholder="Enterpassword">
+                    </div>
+                    <br>
+                    <a href="">Forgot password?</a>
+                    <br>
+                    <br>
+                    <div>
+                    <button type="submit" >SUBMIT</button>
+                    </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

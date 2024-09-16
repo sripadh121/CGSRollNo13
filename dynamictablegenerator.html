@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+  
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Dynamic Table Generator</h2>
+        <form id="tableForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="rows">Number of Rows</label>
+                    <input type="number" class="form-control" id="rows" placeholder="Enter rows" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="columns">Number of Columns</label>
+                    <input type="number" class="form-control" id="columns" placeholder="Enter columns" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Table</button>
+        </form>
+
+        <div id="tableContainer" class="mt-4">
+           
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('tableForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let rows = document.getElementById('rows').value;
+            let columns = document.getElementById('columns').value;
+
+            let table = '<table class="table table-bordered">';
+            for (let i = 0; i < rows; i++) {
+                table += '<tr>';
+                for (let j = 0; j < columns; j++) {
+                    table += `<td contenteditable="true">Row ${i + 1} Column ${j + 1}</td>`;
+                }
+                table += '</tr>';
+            }
+            table += '</table>';
+
+            document.getElementById('tableContainer').innerHTML = table;
+        });
+    </script>
+</body>
+</html>

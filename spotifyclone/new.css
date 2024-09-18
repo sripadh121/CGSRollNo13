@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(24, 25, 24);
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+}
+.card {
+    background-color: #FFF; /* white */
+    border: none;
+    color: #000; /* black */
+    overflow: hidden; /* Prevent content overflow */
+}
+.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    transition: all 0.2s ease-in-out;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensure the card body takes up the full height */
+}
+
+.card img {
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+audio {
+    width: 100%; /* Ensure the audio control fits within the card */
+    margin-top: 10px; /* Add space between text and controls */
+}

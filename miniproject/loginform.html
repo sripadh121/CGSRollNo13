@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="GmailLogin.css"> -->
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow-lg p-5 rounded-3" style="max-width: 900px; width: 100%; border-radius: 20px;">
+        <div class="row no-gutters align-items-center">
+     
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center border-right" style="padding: 30px;">
+                <img src="./gmaillogo.png" alt="Gmail Logo" class="m-3 justify-content-start" style="max-width: 250px;">
+                <h5 class="text-center">Hi, [User Name]</h5>
+            
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle email-dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        useremail@gmail.com
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Switch Account</a>
+                        <a class="dropdown-item" href="#">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding: 30px;">
+                <form>
+                    <div class="form-group mb-3">
+                        <input type="email" class="form-control rounded-pill" id="username" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="password" class="form-control rounded-pill" id="password" placeholder="Enter your password">
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="password" class="form-control rounded-pill" id="password2" placeholder="Confirm Password">
+                    </div>
+                    <div id="conpass-error" class="text-danger mt-2" style="display: none;">Passwords donot match</div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="showPassword">
+                        <label class="form-check-label" for="showPassword">Show password</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="user" >
+                        <label for="">user</label>
+                        <input type="radio" name="user" >
+                        <label for="">admin</label>
+                    </div>
+                    <a href="#" class="d-block mb-3 text-primary" style="font-size: 0.9em;">Forgot password?</a>
+                    <a href="registration.html" class="d-block mb-3 text-primary" style="font-size: 0.9em;">Dont have an account please register?</a>
+                    <button type="button" class="btn btn-primary btn-block rounded-pill" id="login">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center">
+            <span>Username:</span>
+            <span id="username1"></span>
+            <br>
+            <span>Password:</span>
+            <span id="password1"></span>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="loginform.js"></script>
+</body>
+</html>

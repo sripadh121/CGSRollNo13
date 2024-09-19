@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .kpi-card {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .kpi-value {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Sales Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Opportunities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Leads</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Interactions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+        </ul>
+
+        <!-- Search bar -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- KPI Section -->
+  <div class="row text-center mt-4">
+    <div class="col-md-3">
+      <div class="kpi-card">
+        <p>Total Sales</p>
+        <div class="kpi-value">$120,000</div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="kpi-card">
+        <p>Conversion Rate</p>
+        <div class="kpi-value">34%</div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="kpi-card">
+        <p>Active Leads</p>
+        <div class="kpi-value">89</div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="kpi-card">
+        <p>Opportunities Won</p>
+        <div class="kpi-value">45</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Sections -->
+  <div class="row">
+    
+    <!-- Opportunities Section -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Opportunities Pipeline
+        </div>
+        <div class="card-body">
+          <p>Stage 1: Prospecting</p>
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+          </div>
+          <p class="mt-2">Stage 2: Qualified</p>
+          <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+          </div>
+          <p class="mt-2">Stage 3: Proposal Sent</p>
+          <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leads Section -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Leads Overview
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">New Leads: 25</li>
+            <li class="list-group-item">Contacted Leads: 40</li>
+            <li class="list-group-item">Qualified Leads: 10</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactions Section -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Recent Interactions
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">Call with John Doe (Lead) - Yesterday</li>
+            <li class="list-group-item">Email to Jane Smith (Opportunity) - 2 days ago</li>
+            <li class="list-group-item">Meeting with ABC Corp (Client) - Last week</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reports Section -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Reports
+        </div>
+        <div class="card-body">
+          <div class="chart">
+            <p>Sales Performance</p>
+            <img src="https://via.placeholder.com/400x200" alt="Sales chart" class="img-fluid">
+            <p class="mt-2">Revenue Forecast</p>
+            <img src="https://via.placeholder.com/400x200" alt="Revenue chart" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Section -->
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          Settings
+        </div>
+        <div class="card-body">
+          <p><a href="#">User Management</a></p>
+          <p><a href="#">Notification Preferences</a></p>
+          <p><a href="#">Integration Settings</a></p>
+          <p><a href="#">Security Settings</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

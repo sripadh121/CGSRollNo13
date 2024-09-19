@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Admin Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Permissions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+        </ul>
+        
+        <!-- Search bar -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search users or permissions" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- User Management Section -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            User Management
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Role</th>
+                  <th>Permissions</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Admin</td>
+                  <td>Read, Write, Delete</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">Edit</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Jane Smith</td>
+                  <td>User</td>
+                  <td>Read, Write</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">Edit</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Permissions Section -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Permissions Overview
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Admin: Read, Write, Delete</li>
+              <li>User: Read, Write</li>
+              <li>Viewer: Read Only</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit User Modal -->
+  <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editUserForm" novalidate>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" required>
+              <div class="invalid-feedback">Please enter a username.</div>
+            </div>
+            <div class="mb-3">
+              <label for="role" class="form-label">Role</label>
+              <select class="form-select" id="role" required>
+                <option value="">Select role</option>
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+                <option value="Viewer">Viewer</option>
+              </select>
+              <div class="invalid-feedback">Please select a role.</div>
+            </div>
+            <div class="mb-3">
+              <label for="permissions" class="form-label">Permissions</label>
+              <div>
+                <input type="checkbox" id="readPermission" name="permissions" value="Read"> Read<br>
+                <input type="checkbox" id="writePermission" name="permissions" value="Write"> Write<br>
+                <input type="checkbox" id="deletePermission" name="permissions" value="Delete"> Delete
+              </div>
+              <div class="invalid-feedback">Please select at least one permission.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Bootstrap Form Validation
+    (function () {
+      'use strict';
+      var forms = document.querySelectorAll('.needs-validation');
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+    // Additional validation for permissions checkbox
+    document.getElementById('editUserForm').addEventListener('submit', function (event) {
+      var checkboxes = document.querySelectorAll('input[name="permissions"]:checked');
+      if (checkboxes.length === 0) {
+        event.preventDefault();
+        event.stopPropagation();
+        document.querySelector('.invalid-feedback').style.display = 'block';
+      } else {
+        document.querySelector('.invalid-feedback').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
